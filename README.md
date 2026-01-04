@@ -2,7 +2,7 @@
 
 This repo contains code that detects hits and bounces from tennis ball data collected from opencv computer vision algrotithms. In the `data/` folder you can find over 300 points from the Final of Roland Garros 2025. The data includes the actual frames that mark the real hits and bounces that occur during the point. You can view an example of such a point below.
 
-![](front_overlay_111.mp4)
+![](front_overlay_111.gif)
 
 ## Format of the Ball-Tracking Data
 
@@ -73,15 +73,10 @@ Given the raw tracking data I applied the following steps
 
 Using per-event matching with a ±5 frame tolerance, the model achieved the following performance:
 
-- **Hits:**  
-  $$
-  \frac{1275}{1600} \approx 79.7\%
-  $$
-
-- **Bounces:**  
-  $$
-  \frac{1136}{1446} \approx 78.6\%
-  $$
+| Event   | Correct | Total | Accuracy |
+|--------|---------|-------|----------|
+| Hit    | 1275    | 1600  | **79.7%** |
+| Bounce | 1136    | 1446  | **78.6%** |
 
 ### Supervised Approach
 
@@ -99,12 +94,8 @@ Given the raw tracking data we performed the following steps to train the model.
 
 Using per-event matching with a ±5 frame tolerance, the model achieved the following performance:
 
-- **Hits:**  
-  $$
-  \frac{1376}{1376 + 224} = \frac{1376}{1600} \approx 86\%
-  $$
 
-- **Bounces:**  
-  $$
-  \frac{1258}{1258 + 188} = \frac{1258}{1446} \approx 87\%
-  $$
+| Event   | Correct | Total | Accuracy |
+|--------|---------|-------|----------|
+| Hit    | 1376   | 1600  | **86%** |
+| Bounce | 1258    | 1446  | **87%** |
